@@ -1,16 +1,12 @@
-%define geometry 800x600
-%define display  x11
-%define tv_norm  pal
-%define chanlist europe-west
-
 Summary:	Freevo - open-source home theatre PC platform
 Summary(pl):	Freevo - zestaw kina domowego oparty na platformie PC i otwartych ¼ród³ach
 Name:		freevo
-Version:	1.5.0
+Version:	1.5.1
 Release:	1
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/freevo/%{name}-%{version}.tar.gz
+#Source0-MD5:	7a00315cbabeef9868c2f939593a775a
 Source1:	%{name}-boot_config
 URL:		http://freevo.sourceforge.net/
 BuildRequires:	SDL_image >= 1.2.3
@@ -84,30 +80,6 @@ find . -name "*.py" |xargs chmod 644
 env CFLAGS="%{rpmcflags}" \
 python setup.py build
 
-# ??? removed in install
-#mkdir -p %{buildroot}%{_sysconfdir}/freevo
-## The following is needed to let RPM know that the files should be backed up
-#touch %{buildroot}%{_sysconfdir}/freevo/freevo.conf
-#
-## boot scripts
-#mkdir -p %{buildroot}%{_sysconfdir}/rc.d/init.d
-#mkdir -p %{buildroot}%{_bindir}
-#install -m 755 boot/freevo %{buildroot}%{_sysconfdir}/rc.d/init.d
-##install -m 755 boot/freevo_dep %{buildroot}%{_sysconfdir}/rc.d/init.d
-#install -m 755 boot/recordserver %{buildroot}%{_sysconfdir}/rc.d/init.d/freevo_recordserver
-#install -m 755 boot/webserver %{buildroot}%{_sysconfdir}/rc.d/init.d/freevo_webserver
-#install -m 755 boot/recordserver_init %{buildroot}%{_bindir}/freevo_recordserver_init
-#install -m 755 boot/webserver_init %{buildroot}%{_bindir}/freevo_webserver_init
-#install -m 644 -D %{SOURCE1} %{buildroot}%{_sysconfdir}/freevo/boot_config
-#
-#
-#mkdir -p %{buildroot}/var/log/freevo
-#mkdir -p %{buildroot}/var/cache/freevo
-#mkdir -p %{buildroot}/var/cache/freevo/{thumbnails,audio}
-#mkdir -p %{buildroot}/var/cache/xmltv/logos
-#chmod 777 %{buildroot}/var/cache/{freevo,freevo/thumbnails,freevo/audio,xmltv,xmltv/logos}
-#chmod 777 %{buildroot}/var/log/freevo
-
 %install
 rm -rf $RPM_BUILD_ROOT
 python setup.py install \
@@ -118,6 +90,28 @@ install local_conf.py.example $RPM_BUILD_ROOT%{_docdir}
 
 install -d $RPM_BUILD_ROOT%{_datadir}/freevo/contrib/lirc
 cp -av contrib/lirc $RPM_BUILD_ROOT%{_datadir}/freevo/contrib
+mkdir -p %{buildroot}%{_sysconfdir}/freevo
+## The following is needed to let RPM know that the files should be backed up
+touch %{buildroot}%{_sysconfdir}/freevo/freevo.conf
+#
+## boot scripts
+mkdir -p %{buildroot}%{_sysconfdir}/rc.d/init.d
+mkdir -p %{buildroot}%{_bindir}
+install -m 755 boot/freevo %{buildroot}%{_sysconfdir}/rc.d/init.d
+install -m 755 boot/freevo_dep %{buildroot}%{_sysconfdir}/rc.d/init.d
+install -m 755 boot/recordserver %{buildroot}%{_sysconfdir}/rc.d/init.d/freevo_recordserver
+install -m 755 boot/webserver %{buildroot}%{_sysconfdir}/rc.d/init.d/freevo_webserver
+install -m 755 boot/recordserver_init %{buildroot}%{_bindir}/freevo_recordserver_init
+install -m 755 boot/webserver_init %{buildroot}%{_bindir}/freevo_webserver_init
+install -m 644 -D %{SOURCE1} %{buildroot}%{_sysconfdir}/freevo/boot_config
+#
+#
+mkdir -p %{buildroot}/var/log/freevo
+mkdir -p %{buildroot}/var/cache/freevo
+mkdir -p %{buildroot}/var/cache/freevo/{thumbnails,audio}
+mkdir -p %{buildroot}/var/cache/xmltv/logos
+chmod 777 %{buildroot}/var/cache/{freevo,freevo/thumbnails,freevo/audio,xmltv,xmltv/logos}
+chmod 777 %{buildroot}/var/log/freevo
 
 %find_lang %{name}
 
@@ -125,9 +119,7 @@ cp -av contrib/lirc $RPM_BUILD_ROOT%{_datadir}/freevo/contrib
 rm -rf $RPM_BUILD_ROOT
 
 %post
-# Copy old local_conf.py to replace dummy file
-%{_bindir}/freevo setup --geometry=%{geometry} --display=%{display} \
-        --tv=%{tv_norm} --chanlist=%{chanlist}
+echo "Remember to run 'freevo setup' after installing!"
 
 %post boot
 # Add the service, but don't automatically invoke it
@@ -157,6 +149,7 @@ fi
 #%dir %{_docdir}/installation
 #%dir %{_docdir}/plugin_writing
 %dir %{_datadir}/freevo
+%{_datadir}/freevo/*
 %dir %{_datadir}/freevo/contrib
 %dir %{_datadir}/freevo/contrib/fbcon
 %dir %{_datadir}/freevo/contrib/lirc
