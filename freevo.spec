@@ -97,13 +97,13 @@ touch %{buildroot}%{_sysconfdir}/freevo/freevo.conf
 ## boot scripts
 mkdir -p %{buildroot}%{_sysconfdir}/rc.d/init.d
 mkdir -p %{buildroot}%{_bindir}
-install -m 755 boot/freevo %{buildroot}%{_sysconfdir}/rc.d/init.d
-install -m 755 boot/freevo_dep %{buildroot}%{_sysconfdir}/rc.d/init.d
-install -m 755 boot/recordserver %{buildroot}%{_sysconfdir}/rc.d/init.d/freevo_recordserver
-install -m 755 boot/webserver %{buildroot}%{_sysconfdir}/rc.d/init.d/freevo_webserver
-install -m 755 boot/recordserver_init %{buildroot}%{_bindir}/freevo_recordserver_init
-install -m 755 boot/webserver_init %{buildroot}%{_bindir}/freevo_webserver_init
-install -m 644 -D %{SOURCE1} %{buildroot}%{_sysconfdir}/freevo/boot_config
+install boot/freevo %{buildroot}%{_sysconfdir}/rc.d/init.d
+install boot/freevo_dep %{buildroot}%{_sysconfdir}/rc.d/init.d
+install boot/recordserver %{buildroot}%{_sysconfdir}/rc.d/init.d/freevo_recordserver
+install boot/webserver %{buildroot}%{_sysconfdir}/rc.d/init.d/freevo_webserver
+install boot/recordserver_init %{buildroot}%{_bindir}/freevo_recordserver_init
+install boot/webserver_init %{buildroot}%{_bindir}/freevo_webserver_init
+install -D %{SOURCE1} %{buildroot}%{_sysconfdir}/freevo/boot_config
 #
 #
 mkdir -p %{buildroot}/var/log/freevo
@@ -161,7 +161,7 @@ fi
 %attr(1777,root,root) %dir /var/cache/freevo/thumbnails
 %attr(1777,root,root) %dir /var/cache/xmltv
 %attr(1777,root,root) %dir /var/cache/xmltv/logos
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/freevo/freevo.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/freevo/freevo.conf
 #%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/freevo/record_config.py
 %{py_sitescriptdir}/freevo
 # ??? DUP
@@ -173,4 +173,4 @@ fi
 %defattr(644,root,root,755)
 %attr(754,root,root) /etc/rc.d/init.d/*
 %attr(755,root,root) %{_bindir}/freevo_*
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/freevo/boot_config
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/freevo/boot_config
