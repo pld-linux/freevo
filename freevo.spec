@@ -18,7 +18,8 @@ BuildRequires:	libjpeg-devel >= 6b
 BuildRequires:	python-Imaging >= 1.1.4
 BuildRequires:	python-PyXML
 BuildRequires:	python-Twisted >= 1.1.0
-BuildRequires:	python-mmpython >= 0.4.4
+BuildRequires:	python-devel
+BuildRequires:	python-mmpython >= 0.4.8
 BuildRequires:	python-mx-Tools >= 2.0.5
 BuildRequires:	python-numpy >= 23.1
 BuildRequires:	python-pygame >= 1.5.6
