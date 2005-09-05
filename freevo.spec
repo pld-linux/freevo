@@ -37,15 +37,15 @@ and record video and audio.
 %description -l pl
 Freevo to linuksowa aplikacja zamieniaj±ca PC z kart± telewizyjn±
 i/lub wyj¶ciem TV-out na samodzieln± multimedialn± szafê graj±c± /
-magnetowid. Jest zbudowana w oparciu o inne aplikacje, takie jak
-xine, mplayer, tvtime i mencoder s³u¿±ce do odtwarzania i nagrywania
-obrazu i d¼wiêku.
+magnetowid. Jest zbudowana w oparciu o inne aplikacje, takie jak xine,
+mplayer, tvtime i mencoder s³u¿±ce do odtwarzania i nagrywania obrazu
+i d¼wiêku.
 
 %package boot
 Summary:	Files to enable a standalone Freevo system (started from initscript)
 Summary(pl):	Pliki do w³±czania samodzielnego systemu Freevo (uruchamiane z initscriptów)
 Group:		Applications/Multimedia
-PreReq:		rc-scripts
+Requires:	rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 Requires:	%{name} = %{version}-%{release}
 
@@ -61,9 +61,9 @@ system.
 %description boot -l pl
 Freevo to linuksowa aplikacja zamieniaj±ca PC z kart± telewizyjn±
 i/lub wyj¶ciem TV-out na samodzieln± multimedialn± szafê graj±c± /
-magnetowid. Jest zbudowana w oparciu o inne aplikacje, takie jak
-xine, mplayer, tvtime i mencoder s³u¿±ce do odtwarzania i nagrywania
-obrazu i d¼wiêku.
+magnetowid. Jest zbudowana w oparciu o inne aplikacje, takie jak xine,
+mplayer, tvtime i mencoder s³u¿±ce do odtwarzania i nagrywania obrazu
+i d¼wiêku.
 
 Ten pakiet instaluje skrypty inicjalizuj±ce potrzebne do samodzielnego
 systemu Freevo.
@@ -72,10 +72,10 @@ systemu Freevo.
 %setup -q
 
 find . -name CVS | xargs rm -rf
-find . -name ".cvsignore" |xargs rm -f
-find . -name "*.pyc" |xargs rm -f
-find . -name "*.pyo" |xargs rm -f
-find . -name "*.py" |xargs chmod 644
+find . -name ".cvsignore" | xargs rm -f
+find . -name "*.pyc" | xargs rm -f
+find . -name "*.pyo" | xargs rm -f
+find . -name "*.py" | xargs chmod 644
 
 %build
 env CFLAGS="%{rpmcflags}" \
@@ -91,28 +91,26 @@ install local_conf.py.example $RPM_BUILD_ROOT%{_docdir}
 
 install -d $RPM_BUILD_ROOT%{_datadir}/freevo/contrib/lirc
 cp -av contrib/lirc $RPM_BUILD_ROOT%{_datadir}/freevo/contrib
-mkdir -p %{buildroot}%{_sysconfdir}/freevo
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/freevo
 ## The following is needed to let RPM know that the files should be backed up
-touch %{buildroot}%{_sysconfdir}/freevo/freevo.conf
+touch $RPM_BUILD_ROOT%{_sysconfdir}/freevo/freevo.conf
 #
 ## boot scripts
-mkdir -p %{buildroot}%{_sysconfdir}/rc.d/init.d
-mkdir -p %{buildroot}%{_bindir}
-install boot/freevo %{buildroot}%{_sysconfdir}/rc.d/init.d
-install boot/freevo_dep %{buildroot}%{_sysconfdir}/rc.d/init.d
-install boot/recordserver %{buildroot}%{_sysconfdir}/rc.d/init.d/freevo_recordserver
-install boot/webserver %{buildroot}%{_sysconfdir}/rc.d/init.d/freevo_webserver
-install boot/recordserver_init %{buildroot}%{_bindir}/freevo_recordserver_init
-install boot/webserver_init %{buildroot}%{_bindir}/freevo_webserver_init
-install -D %{SOURCE1} %{buildroot}%{_sysconfdir}/freevo/boot_config
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d
+install -d $RPM_BUILD_ROOT%{_bindir}
+install boot/freevo $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d
+install boot/freevo_dep $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d
+install boot/recordserver $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/freevo_recordserver
+install boot/webserver $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/freevo_webserver
+install boot/recordserver_init $RPM_BUILD_ROOT%{_bindir}/freevo_recordserver_init
+install boot/webserver_init $RPM_BUILD_ROOT%{_bindir}/freevo_webserver_init
+install -D %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/freevo/boot_config
 #
 #
-mkdir -p %{buildroot}/var/log/freevo
-mkdir -p %{buildroot}/var/cache/freevo
-mkdir -p %{buildroot}/var/cache/freevo/{thumbnails,audio}
-mkdir -p %{buildroot}/var/cache/xmltv/logos
-chmod 777 %{buildroot}/var/cache/{freevo,freevo/thumbnails,freevo/audio,xmltv,xmltv/logos}
-chmod 777 %{buildroot}/var/log/freevo
+install -d $RPM_BUILD_ROOT/var/log/freevo
+install -d $RPM_BUILD_ROOT/var/cache/freevo
+install -d $RPM_BUILD_ROOT/var/cache/freevo/{thumbnails,audio}
+install -d $RPM_BUILD_ROOT/var/cache/xmltv/logos
 
 %find_lang %{name}
 
@@ -120,7 +118,9 @@ chmod 777 %{buildroot}/var/log/freevo
 rm -rf $RPM_BUILD_ROOT
 
 %post
-echo "Remember to run 'freevo setup' after installing!"
+if [ "$1" = 1 ]; then
+	echo "Remember to run 'freevo setup' after installing!"
+fi
 
 %post boot
 # Add the service, but don't automatically invoke it
