@@ -2,7 +2,7 @@ Summary:	Freevo - open-source home theatre PC platform
 Summary(pl):	Freevo - zestaw kina domowego oparty na platformie PC i otwartych ¼ród³ach
 Name:		freevo
 Version:	1.5.3
-Release:	1
+Release:	1.1
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/freevo/%{name}-%{version}.tar.gz
@@ -126,12 +126,12 @@ fi
 # Add the service, but don't automatically invoke it
 # user has to enable it via ntsysv
 /sbin/chkconfig --add freevo
-/sbin/chkconfig --levels 234 freevo off
+/sbin/chkconfig --level 234 freevo off
 #/sbin/chkconfig --add freevo_dep
 /sbin/chkconfig --add freevo_recordserver
-/sbin/chkconfig --levels 234 freevo_recordserver off
+/sbin/chkconfig --level 234 freevo_recordserver off
 /sbin/chkconfig --add freevo_webserver
-/sbin/chkconfig --levels 234 freevo_webserver off
+/sbin/chkconfig --level 234 freevo_webserver off
 
 %preun boot
 if [ "$1" = 0 ] ; then
