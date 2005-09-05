@@ -17,7 +17,7 @@ BuildRequires:	libexif-devel >= 0.5.10
 BuildRequires:	libjpeg-devel >= 6b
 BuildRequires:	python-Imaging >= 1.1.4
 BuildRequires:	python-PyXML
-BuildRequires:	python-Twisted >= 1.1.0
+BuildRequires:	python-Twisted >= 2.0.1-1
 BuildRequires:	python-devel
 BuildRequires:	python-mmpython >= 0.4.8
 BuildRequires:	python-mx-Tools >= 2.0.5
