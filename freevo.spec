@@ -45,9 +45,9 @@ i d¼wiêku.
 Summary:	Files to enable a standalone Freevo system (started from initscript)
 Summary(pl):	Pliki do w³±czania samodzielnego systemu Freevo (uruchamiane z initscriptów)
 Group:		Applications/Multimedia
-Requires:	rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 Requires:	%{name} = %{version}-%{release}
+Requires:	rc-scripts
 
 %description boot
 Freevo is a Linux application that turns a PC with a TV capture card
