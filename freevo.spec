@@ -18,7 +18,6 @@ BuildRequires:	libjpeg-devel >= 6b
 BuildRequires:	python-Imaging >= 1.1.4
 BuildRequires:	python-PyXML
 BuildRequires:	python-Twisted >= 2.0.1-1
-BuildRequires:	python-TwistedWeb
 BuildRequires:	python-devel
 BuildRequires:	python-mmpython >= 0.4.8
 BuildRequires:	python-mx-Tools >= 2.0.5
@@ -26,6 +25,7 @@ BuildRequires:	python-numpy >= 23.1
 BuildRequires:	python-pygame >= 1.5.6
 Requires:	aumix >= 2.8
 Requires:	lsdvd
+Requires:	python-TwistedWeb
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
