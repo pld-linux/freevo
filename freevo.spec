@@ -1,12 +1,12 @@
 Summary:	Freevo - open-source home theatre PC platform
 Summary(pl):	Freevo - zestaw kina domowego oparty na platformie PC i otwartych ¼ród³ach
 Name:		freevo
-Version:	1.5.3
-Release:	1.1
+Version:	1.5.4
+Release:	1
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/freevo/%{name}-%{version}.tar.gz
-# Source0-md5:	20263d2a4de1fc5948391c6b2ca04b0d
+# Source0-md5:	22ada48e84e5e3d7f80110c842ed18ca
 Source1:	%{name}-boot_config
 URL:		http://freevo.sourceforge.net/
 BuildRequires:	SDL_image >= 1.2.3
@@ -18,6 +18,7 @@ BuildRequires:	libjpeg-devel >= 6b
 BuildRequires:	python-Imaging >= 1.1.4
 BuildRequires:	python-PyXML
 BuildRequires:	python-Twisted >= 2.0.1-1
+BuildRequires:	python-TwistedWeb
 BuildRequires:	python-devel
 BuildRequires:	python-mmpython >= 0.4.8
 BuildRequires:	python-mx-Tools >= 2.0.5
@@ -149,12 +150,7 @@ fi
 %attr(755,root,root) %{_bindir}/*
 #%dir %{_docdir}/installation
 #%dir %{_docdir}/plugin_writing
-%dir %{_datadir}/freevo
-%{_datadir}/freevo/*
-%dir %{_datadir}/freevo/contrib
-%dir %{_datadir}/freevo/contrib/fbcon
-%dir %{_datadir}/freevo/contrib/lirc
-%{_datadir}/freevo/contrib/lirc/*
+%{_datadir}/freevo
 %dir %{_sysconfdir}/freevo
 %attr(1777,root,root) %dir /var/log/freevo
 %attr(1777,root,root) %dir /var/cache/freevo
@@ -165,8 +161,6 @@ fi
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/freevo/freevo.conf
 #%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/freevo/record_config.py
 %{py_sitescriptdir}/freevo
-# ??? DUP
-#%{_datadir}/freevo
 %dir %{_datadir}/fxd
 %{_datadir}/fxd/webradio.fxd
 
