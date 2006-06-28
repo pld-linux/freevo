@@ -9,23 +9,23 @@ Source0:	http://dl.sourceforge.net/freevo/%{name}-%{version}.tar.gz
 # Source0-md5:	22ada48e84e5e3d7f80110c842ed18ca
 Source1:	%{name}-boot_config
 URL:		http://freevo.sourceforge.net/
-BuildRequires:	SDL_image >= 1.2.3
-BuildRequires:	SDL_mixer >= 1.2.5
-BuildRequires:	SDL_ttf >= 2.0.6
-BuildRequires:	docbook-utils
-BuildRequires:	libexif-devel >= 0.5.10
-BuildRequires:	libjpeg-devel >= 6b
 BuildRequires:	python-Imaging >= 1.1.4
-BuildRequires:	python-PyXML
 BuildRequires:	python-Twisted >= 2.0.1-1
 BuildRequires:	python-devel
-BuildRequires:	python-mmpython >= 0.4.8
-BuildRequires:	python-mx-Tools >= 2.0.5
-BuildRequires:	python-numpy >= 23.1
+BuildRequires:	python-mmpython >= 0.4.9
 BuildRequires:	python-pygame >= 1.5.6
+BuildRequires:	rpm-pythonprov
+%pyrequires_eq	python-libs
 Requires:	aumix >= 2.8
 Requires:	lsdvd
+Requires:	mplayer
+Requires:	python-Imaging >= 1.1.4
 Requires:	python-TwistedWeb
+Requires:	python-mmpython >= 0.4.9
+Requires:	python-pygame >= 1.5.6
+#Suggests:	tvtime
+#Suggests:	xine-ui
+#Suggests:	xmltv
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -147,7 +147,7 @@ fi
 %doc ChangeLog FAQ INSTALL README TODO Docs local_conf.py.example
 %doc contrib/lirc
 %{_docdir}/local_conf.py.example
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/freevo
 #%dir %{_docdir}/installation
 #%dir %{_docdir}/plugin_writing
 %{_datadir}/freevo
