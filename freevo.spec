@@ -1,3 +1,6 @@
+#
+# TODO: use puthonprov to get requires
+#
 Summary:	Freevo - open-source home theatre PC platform
 Summary(pl):	Freevo - zestaw kina domowego oparty na platformie PC i otwartych ¼ród³ach
 Name:		freevo
@@ -24,6 +27,7 @@ Requires:	mplayer
 Requires:	python-Imaging >= 1.1.4
 Requires:	python-TwistedWeb
 Requires:	python-mmpython >= 0.4.9
+Requires:	python-numpy
 Requires:	python-pygame >= 1.5.6
 #Suggests:	tvtime
 #Suggests:	xine-ui
@@ -107,7 +111,7 @@ install boot/recordserver $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/freevo_recor
 install boot/webserver $RPM_BUILD_ROOT%{_sysconfdir}/rc.d/init.d/freevo_webserver
 install boot/recordserver_init $RPM_BUILD_ROOT%{_bindir}/freevo_recordserver_init
 install boot/webserver_init $RPM_BUILD_ROOT%{_bindir}/freevo_webserver_init
-install -D %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/freevo/boot_config
+install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/freevo/boot_config
 #
 #
 install -d $RPM_BUILD_ROOT/var/log/freevo
