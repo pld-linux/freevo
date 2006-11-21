@@ -12,6 +12,7 @@ URL:		http://freevo.sourceforge.net/
 BuildRequires:	python-Imaging >= 1.1.4
 BuildRequires:	python-Twisted >= 2.0.1-1
 BuildRequires:	python-devel
+BuildRequires:	python-elementtree
 BuildRequires:	python-mmpython >= 0.4.9
 BuildRequires:	python-pygame >= 1.5.6
 BuildRequires:	rpm-pythonprov
