@@ -163,8 +163,8 @@ fi
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/freevo/freevo.conf
 #%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/freevo/record_config.py
 %{py_sitescriptdir}/freevo
-%dir %{_datadir}/fxd
-%{_datadir}/fxd/webradio.fxd
+#%dir %{_datadir}/fxd
+#%{_datadir}/fxd/webradio.fxd
 
 %files boot
 %defattr(644,root,root,755)
