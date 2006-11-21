@@ -11,7 +11,7 @@ Source1:	%{name}-boot_config
 URL:		http://freevo.sourceforge.net/
 BuildRequires:	python-Imaging >= 1.1.4
 BuildRequires:	python-Twisted >= 2.0.1-1
-BuildRequiresL	python-TwistedWeb
+BuildRequires:	python-TwistedWeb
 BuildRequires:	python-devel
 BuildRequires:	python-elementtree
 BuildRequires:	python-mmpython >= 0.4.9
