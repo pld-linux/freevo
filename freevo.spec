@@ -1,6 +1,3 @@
-#
-# TODO: use puthonprov to get requires
-#
 Summary:	Freevo - open-source home theatre PC platform
 Summary(pl):	Freevo - zestaw kina domowego oparty na platformie PC i otwartych ¼ród³ach
 Name:		freevo
