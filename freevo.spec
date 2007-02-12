@@ -1,5 +1,5 @@
 Summary:	Freevo - open-source home theatre PC platform
-Summary(pl):	Freevo - zestaw kina domowego oparty na platformie PC i otwartych ¼ród³ach
+Summary(pl.UTF-8):   Freevo - zestaw kina domowego oparty na platformie PC i otwartych ÅºrÃ³dÅ‚ach
 Name:		freevo
 Version:	1.6.0
 Release:	1
@@ -38,16 +38,16 @@ and/or TV-out into a standalone multimedia jukebox/VCR. It builds on
 other applications such as xine, mplayer, tvtime and mencoder to play
 and record video and audio.
 
-%description -l pl
-Freevo to linuksowa aplikacja zamieniaj±ca PC z kart± telewizyjn±
-i/lub wyj¶ciem TV-out na samodzieln± multimedialn± szafê graj±c± /
+%description -l pl.UTF-8
+Freevo to linuksowa aplikacja zamieniajÄ…ca PC z kartÄ… telewizyjnÄ…
+i/lub wyjÅ›ciem TV-out na samodzielnÄ… multimedialnÄ… szafÄ™ grajÄ…cÄ… /
 magnetowid. Jest zbudowana w oparciu o inne aplikacje, takie jak xine,
-mplayer, tvtime i mencoder s³u¿±ce do odtwarzania i nagrywania obrazu
-i d¼wiêku.
+mplayer, tvtime i mencoder sÅ‚uÅ¼Ä…ce do odtwarzania i nagrywania obrazu
+i dÅºwiÄ™ku.
 
 %package boot
 Summary:	Files to enable a standalone Freevo system (started from initscript)
-Summary(pl):	Pliki do w³±czania samodzielnego systemu Freevo (uruchamiane z initscriptów)
+Summary(pl.UTF-8):   Pliki do wÅ‚Ä…czania samodzielnego systemu Freevo (uruchamiane z initscriptÃ³w)
 Group:		Applications/Multimedia
 Requires(post,preun):	/sbin/chkconfig
 Requires:	%{name} = %{version}-%{release}
@@ -62,14 +62,14 @@ video and audio.
 Note: This installs the initscripts necessary for a standalone Freevo
 system.
 
-%description boot -l pl
-Freevo to linuksowa aplikacja zamieniaj±ca PC z kart± telewizyjn±
-i/lub wyj¶ciem TV-out na samodzieln± multimedialn± szafê graj±c± /
+%description boot -l pl.UTF-8
+Freevo to linuksowa aplikacja zamieniajÄ…ca PC z kartÄ… telewizyjnÄ…
+i/lub wyjÅ›ciem TV-out na samodzielnÄ… multimedialnÄ… szafÄ™ grajÄ…cÄ… /
 magnetowid. Jest zbudowana w oparciu o inne aplikacje, takie jak xine,
-mplayer, tvtime i mencoder s³u¿±ce do odtwarzania i nagrywania obrazu
-i d¼wiêku.
+mplayer, tvtime i mencoder sÅ‚uÅ¼Ä…ce do odtwarzania i nagrywania obrazu
+i dÅºwiÄ™ku.
 
-Ten pakiet instaluje skrypty inicjalizuj±ce potrzebne do samodzielnego
+Ten pakiet instaluje skrypty inicjalizujÄ…ce potrzebne do samodzielnego
 systemu Freevo.
 
 %prep
