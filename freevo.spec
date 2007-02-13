@@ -1,5 +1,5 @@
 Summary:	Freevo - open-source home theatre PC platform
-Summary(pl.UTF-8):   Freevo - zestaw kina domowego oparty na platformie PC i otwartych źródłach
+Summary(pl.UTF-8):	Freevo - zestaw kina domowego oparty na platformie PC i otwartych źródłach
 Name:		freevo
 Version:	1.6.0
 Release:	1
@@ -47,7 +47,7 @@ i dźwięku.
 
 %package boot
 Summary:	Files to enable a standalone Freevo system (started from initscript)
-Summary(pl.UTF-8):   Pliki do włączania samodzielnego systemu Freevo (uruchamiane z initscriptów)
+Summary(pl.UTF-8):	Pliki do włączania samodzielnego systemu Freevo (uruchamiane z initscriptów)
 Group:		Applications/Multimedia
 Requires(post,preun):	/sbin/chkconfig
 Requires:	%{name} = %{version}-%{release}
