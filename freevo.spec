@@ -1,12 +1,12 @@
 Summary:	Freevo - open-source home theatre PC platform
 Summary(pl.UTF-8):	Freevo - zestaw kina domowego oparty na platformie PC i otwartych źródłach
 Name:		freevo
-Version:	1.7.0
+Version:	1.7.1
 Release:	1
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/freevo/%{name}-%{version}.tar.gz
-# Source0-md5:	531f2b00aac35e5e7b111cf9abc36825
+# Source0-md5:	3157677c47949a169340b4b29ee75156
 Source1:	%{name}-boot_config
 Patch0:		%{name}-setup.py-elementtree.patch
 URL:		http://freevo.sourceforge.net/
@@ -120,6 +120,8 @@ install -d $RPM_BUILD_ROOT/var/log/freevo
 install -d $RPM_BUILD_ROOT/var/cache/freevo
 install -d $RPM_BUILD_ROOT/var/cache/freevo/{thumbnails,audio}
 install -d $RPM_BUILD_ROOT/var/cache/xmltv/logos
+
+rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 %find_lang %{name}
 
