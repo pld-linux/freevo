@@ -2,18 +2,20 @@ Summary:	Freevo - open-source home theatre PC platform
 Summary(pl.UTF-8):	Freevo - zestaw kina domowego oparty na platformie PC i otwartych źródłach
 Name:		freevo
 Version:	1.7.0
-Release:	1
+Release:	0.1
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/freevo/%{name}-%{version}.tar.gz
 # Source0-md5:	531f2b00aac35e5e7b111cf9abc36825
 Source1:	%{name}-boot_config
 URL:		http://freevo.sourceforge.net/
-BuildRequires:	python-Imaging >= 1.1.4
-BuildRequires:	python-Twisted >= 2.0.1-1
+BuildRequires:	python-PIL >= 1.1.4
+BuildRequires:	python-TwistedCore >= 2.0.1-1
 BuildRequires:	python-TwistedWeb
 BuildRequires:	python-devel
 BuildRequires:	python-elementtree
+BuildRequires:	python-kaa-imlib2
+BuildRequires:	python-kaa-metadata
 BuildRequires:	python-mmpython >= 0.4.9
 BuildRequires:	python-pygame >= 1.5.6
 BuildRequires:	rpm-pythonprov
@@ -21,7 +23,7 @@ BuildRequires:	rpm-pythonprov
 Requires:	aumix >= 2.8
 Requires:	lsdvd
 Requires:	mplayer
-Requires:	python-Imaging >= 1.1.4
+Requires:	python-PIL >= 1.1.4
 Requires:	python-TwistedWeb
 Requires:	python-mmpython >= 0.4.9
 Requires:	python-numpy
