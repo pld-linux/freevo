@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/freevo/%{name}-%{version}.tar.gz
 # Source0-md5:	531f2b00aac35e5e7b111cf9abc36825
 Source1:	%{name}-boot_config
 URL:		http://freevo.sourceforge.net/
+BuildRequires:	python-BeautifulSoup
 BuildRequires:	python-PIL >= 1.1.4
 BuildRequires:	python-TwistedCore >= 2.0.1-1
 BuildRequires:	python-TwistedWeb
