@@ -1,0 +1,11 @@
+--- ./src/tv/xmltv.py.old	2007-05-01 18:34:24.000000000 +0200
++++ ./src/tv/xmltv.py	2007-05-01 18:40:10.000000000 +0200
+@@ -31,7 +31,7 @@
+ #
+ import types, re
+ try:
+-    from cElementTree import ElementTree, Element, SubElement, tostring
++    from _elementtree import ElementTree, Element, SubElement, tostring
+ except ImportError:
+     from elementtree.ElementTree import ElementTree, Element, SubElement, tostring
+ 
