@@ -9,6 +9,7 @@ Source0:	http://dl.sourceforge.net/freevo/%{name}-%{version}.tar.gz
 # Source0-md5:	3157677c47949a169340b4b29ee75156
 Source1:	%{name}-boot_config
 Patch0:		%{name}-setup.py-elementtree.patch
+Patch1:		%{name}-xmltv.py.patch
 URL:		http://freevo.sourceforge.net/
 BuildRequires:	python-BeautifulSoup
 BuildRequires:	python-PIL >= 1.1.4
@@ -79,7 +80,8 @@ systemu Freevo.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
+%patch1 -p0
 
 find . -name CVS | xargs rm -rf
 find . -name ".cvsignore" | xargs rm -f
