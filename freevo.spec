@@ -25,6 +25,7 @@ BuildRequires:	rpm-pythonprov
 Requires:	aumix >= 2.8
 Requires:	lsdvd
 Requires:	mplayer
+Requires:	python-Numeric
 Requires:	python-PIL >= 1.1.4
 Requires:	python-TwistedWeb
 Requires:	python-mmpython >= 0.4.9
