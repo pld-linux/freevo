@@ -5,7 +5,7 @@
  import types, re
  try:
 -    from cElementTree import ElementTree, Element, SubElement, tostring
-+    from _elementtree import ElementTree, Element, SubElement, tostring
++    from xml.etree.cElementTree import ElementTree, Element, SubElement, tostring
  except ImportError:
      from elementtree.ElementTree import ElementTree, Element, SubElement, tostring
  
