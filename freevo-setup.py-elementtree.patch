@@ -1,0 +1,11 @@
+--- freevo-1.7.0/setup.py~	2006-12-04 17:38:21.000000000 +0100
++++ freevo-1.7.0/setup.py	2007-05-01 14:15:35.000000000 +0200
+@@ -24,7 +24,7 @@
+             ('BeautifulSoup', 'http://www.crummy.com/software/BeautifulSoup/' ),
+             ('pygame', 'http://www.pygame.org'),
+             ('Image', 'http://www.pythonware.com/products/pil/'),
+-            ('elementtree', 'http://effbot.org/zone/elementtree.htm'),
++            ('_elementtree', 'http://effbot.org/zone/elementtree.htm'),
+             ('twisted', 'http://www.twistedmatrix.com/'),
+             ('twisted.web.microdom', 'http://www.twistedmatrix.com/')
+ ))
