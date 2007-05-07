@@ -29,6 +29,8 @@ Requires:	mplayer
 Requires:	python-Numeric
 Requires:	python-PIL >= 1.1.4
 Requires:	python-TwistedWeb
+Requires:	python-kaa-metadata
+Requires:	python-kaa-imlib2
 Requires:	python-mmpython >= 0.4.9
 Requires:	python-numpy
 Requires:	python-pygame >= 1.5.6
