@@ -21,6 +21,7 @@ BuildRequires:	python-kaa-imlib2
 BuildRequires:	python-kaa-metadata
 BuildRequires:	python-mmpython >= 0.4.9
 BuildRequires:	python-pygame >= 1.5.6
+BuildRequires:	python-libxml2
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
 Requires:	aumix >= 2.8
