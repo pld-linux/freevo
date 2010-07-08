@@ -2,7 +2,7 @@ Summary:	Freevo - open-source home theatre PC platform
 Summary(pl.UTF-8):	Freevo - zestaw kina domowego oparty na platformie PC i otwartych źródłach
 Name:		freevo
 Version:	1.7.2
-Release:	4
+Release:	5
 License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://dl.sourceforge.net/freevo/%{name}-%{version}.tar.gz
