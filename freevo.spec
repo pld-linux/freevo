@@ -93,13 +93,11 @@ find . -name "*.pyo" | xargs rm -f
 find . -name "*.py" | xargs chmod 644
 
 %build
-env CFLAGS="%{rpmcflags}" \
-python setup.py build
+env %py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python setup.py install \
-	--root=$RPM_BUILD_ROOT \
+%py_install \
 	--record=INSTALLED_FILES
 
 install local_conf.py.example $RPM_BUILD_ROOT%{_docdir}
