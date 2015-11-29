@@ -11,6 +11,7 @@ Source1:	%{name}-boot_config
 Patch0:		%{name}-setup.py-elementtree.patch
 Patch1:		%{name}-xmltv.py.patch
 URL:		http://freevo.sourceforge.net/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python-BeautifulSoup
 BuildRequires:	python-PIL >= 1.1.4
 BuildRequires:	python-TwistedCore >= 2.0.1-1
