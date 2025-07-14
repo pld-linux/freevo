@@ -84,8 +84,8 @@ systemu Freevo.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p0
+%patch -P0 -p1
+%patch -P1 -p0
 
 find . -name CVS | xargs rm -rf
 find . -name ".cvsignore" | xargs rm -f
